@@ -1,3 +1,83 @@
-body{
-    background-color: red;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: gainsboro;
+}
+
+header {
+
+    .contener {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .icon_box {
+            .cinem_of_title_flex_case {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+
+            .application_flex_case {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+        }
+
+        .hot_hrefs_case {
+            display: flex;
+            align-items: center;
+            gap: 10%;
+            justify-content: center;
+
+            a {
+                color: #FFF;
+                font-size: 15px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+
+        .search_and_btn_flex_box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .search_btn {
+                width: 55px;
+                height: 52px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                padding-left: 3px;
+            }
+
+            .add_btn {
+                width: 130px;
+                height: 53px;
+                border-radius: 10px;
+                background: #3657CB;
+                box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.80);
+                 border: 0;
+                 font-size: 15px;
+                 color: white;
+                 font-weight: 600;
+            }
+        }
+    }
+
+    //contener///
+
 }
