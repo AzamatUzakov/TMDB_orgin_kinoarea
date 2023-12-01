@@ -11,7 +11,7 @@ body {
 
 header {
 
-    .contener {
+    .first_option_contener {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -42,9 +42,35 @@ header {
 
             a {
                 color: #FFF;
-                font-size: 15px;
+                font-size: 17px;
                 font-weight: 600;
                 text-decoration: none;
+
+                &:hover {
+                    color: black;
+                    transition: .7s ease;
+                }
+
+
+                &:after {
+                    background-color: rgb(58, 193, 247);
+                    /* Цвет линии при наведении на нее курсора мыши */
+                    display: block;
+                    content: "";
+                    height: 2px;
+                    /* Высота линии */
+                    width: 0%;
+                    -webkit-transition: width .3s ease-in-out;
+                    -moz--transition: width .3s ease-in-out;
+                    transition: width .3s ease-in-out;
+
+                }
+
+                &:hover:after,
+                &:focus:after {
+                    width: 100%;
+                    transition: .5s ease;
+                }
             }
         }
 
@@ -55,7 +81,7 @@ header {
 
             .search_btn {
                 width: 55px;
-                height: 52px;
+                height: 50px;
                 background-color: white;
                 display: flex;
                 align-items: center;
@@ -66,18 +92,235 @@ header {
 
             .add_btn {
                 width: 130px;
-                height: 53px;
+                height: 50px;
                 border-radius: 10px;
                 background: #3657CB;
                 box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.80);
-                 border: 0;
-                 font-size: 15px;
-                 color: white;
-                 font-weight: 600;
+                border: 0;
+                font-size: 15px;
+                color: white;
+                font-weight: 600;
             }
         }
     }
 
-    //contener///
+    //first_option_contener///
 
+
+
+
+    .second_option_contener {
+        display: none;
+        position: relative;
+
+        .flex_second_case {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .burger_menu_and_search_btn_flex_box {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+
+
+                .second_search_btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 43.365px;
+                    height: 41px;
+                    background-color: white;
+                    padding: 4px;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    img {
+                        width: 70%;
+                    }
+                }
+
+                .burger_menu {
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    width: 43.365px;
+                    height: 41px;
+                    background-color: white;
+                    padding: 4px;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    img {
+                        width: 70%;
+                    }
+                }
+
+            }
+
+            .second_icon_box {
+
+
+                .cinem_and_kinoarea_flex_box {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    
+                }
+
+                .aplication_flex_box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            .add_btn {
+                width: 100px;
+                height: 42px;
+                border-radius: 5px;
+                background: #3657CB;
+                box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.80);
+                border: 0;
+                font-size: 15px;
+                color: white;
+                font-weight: 500;
+            }
+        }
+
+        .hot_href_box {
+            display: flex;
+            align-items: center;
+            gap: 3%;
+            justify-content: center;
+            margin-top: 24px;
+
+            a {
+                color: #FFF;
+                font-size: 17px;
+                font-weight: 600;
+                text-decoration: none;
+
+                &:hover {
+                    color: black;
+                    transition: .7s ease;
+                }
+
+
+                &:after {
+                    background-color: rgb(58, 193, 247);
+                    /* Цвет линии при наведении на нее курсора мыши */
+                    display: block;
+                    content: "";
+                    height: 2px;
+                    /* Высота линии */
+                    width: 0%;
+                    -webkit-transition: width .3s ease-in-out;
+                    -moz--transition: width .3s ease-in-out;
+                    transition: width .3s ease-in-out;
+
+                }
+
+                &:hover:after,
+                &:focus:after {
+                    width: 100%;
+                    transition: .5s ease;
+                }
+            }
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            display: none;
+            width: 100%;
+            height: 100vh;
+            background-color: #1e2538d8;
+            padding: 32px 0 40px;
+            backdrop-filter: blur(2px);
+
+            transition: 0.7s ease;
+            opacity: 1;
+            animation-duration: 0.7s;
+            animation-name: modal;
+
+
+
+            @keyframes modal {
+                from {
+                  top: -600px;
+                  opacity: 0
+                }
+              
+                to {
+                  right: 0;
+                  opacity: 1
+                }
+              }
+
+            .box {
+
+
+                .close{
+                    position: absolute;
+                    right: 10%;
+                    cursor: pointer;
+                }
+                .icon_case{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    margin-bottom: 20px;
+
+                }
+
+
+                .hot_href_menu{
+                    display: block;
+                    align-items: center;
+                    gap: 3%;
+                    justify-content: center;
+                    margin-top: 10px;
+                    text-align: center;
+        
+                    a {
+                        color: #FFF;
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-decoration: none;
+        
+                        &:hover {
+                            color: black;
+                            transition: .7s ease;
+                        }
+        
+        
+                        &:after {
+                            background-color: rgb(58, 193, 247);
+                            /* Цвет линии при наведении на нее курсора мыши */
+                            display: block;
+                            content: "";
+                            height: 2px;
+                            /* Высота линии */
+                            width: 0%;
+                            -webkit-transition: width .3s ease-in-out;
+                            -moz--transition: width .3s ease-in-out;
+                            transition: width .3s ease-in-out;
+        
+                        }
+        
+                        &:hover:after,
+                        &:focus:after {
+                            width: 100%;
+                            transition: .5s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //second_option_contener//
 }
