@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer_side {
+  padding: 100px;
+  background-image: url(/public/footerImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  .logo {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+.follow_email {
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 25px;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  form {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    input {
+      width: 400px;
+      padding: 20px;
+      color: #151a2699;
+      background: #ffffff;
+      font-weight: 600;
+      border: 0;
+      border-radius: 10px;
+    }
+    button {
+      border: 0;
+      width: 200px;
+      padding: 10px;
+      font-weight: 600;
+      border-radius: 10px;
+      color: #151a26;
+      background: #f2f60f;
+    }
+  }
+  .agry_flex {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    .agry {
+      input {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .agry_text {
+      align-items: center;
+      display: flex;
+      gap: 5px;
+      p {
+        font-weight: 400;
+        margin: 0;
+      }
+      a {
+        font-weight: 400;
+        color: #f2f60f;
+      }
+    }
+  }
+}
