@@ -230,6 +230,18 @@ function header() {
     second_icon_box.append(cinem_and_kinoarea_flex_box, aplication_flex_box)
     cinem_and_kinoarea_flex_box.append(cinem_and_kinoarea_flex_box_first_img, cinem_and_kinoarea_flex_box_second_img)
     aplication_flex_box.append(aplication_flex_box_vk, aplication_flex_box_inst, aplication_flex_box_face, aplication_flex_box_twit)
-hot_href_box.append(hot_href_box_one,hot_href_box_two,hot_href_box_three)
+    hot_href_box.append(hot_href_box_one, hot_href_box_two, hot_href_box_three, hot_href_box_foor, hot_href_box_five, hot_href_box_six, hot_href_box_seven)
+
+    menu.append(box)
+    box.append(close_img, icon_case, hot_href_menu)
+    icon_case.append(icon_case_cinem, icon_case_kinoarea)
+    hot_href_menu.append(hot_href_menu_one, one_br, hot_href_menu_two, two_br, hot_href_menu_three, three_br, hot_href_menu_foor, foor_br, hot_href_menu_five, five_br, hot_href_menu_six, six_br, hot_href_menu_seven)
+
+    burger_menu.onclick = () => {
+        menu.style.display = "block"
+    }
+    close_img.onclick = () => {
+        menu.style.display = "none"
+    }
 }
 header()
