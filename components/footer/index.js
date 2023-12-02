@@ -16,6 +16,7 @@ function footer() {
   let agry_text_p = document.createElement("p");
   let agry_text_a = document.createElement("a");
 
+  checkbox.type = "checkbox";
   footerSide.classList.add("footer_side");
   logo.classList.add("logo");
   img.src = "/public/logo.png";
