@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer_side {
+  background-image: url(/public/footerImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+  .logo {
+    padding-top: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+.follow_email {
+  margin-top: 40px;
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+    font-size: 25px;
+    width: 800px;
+    color: white;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+  form {
+    margin-top: 20px;
+
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    input {
+      width: 400px;
+      padding: 20px;
+      color: #151a2699;
+      background: #ffffff;
+      font-weight: 600;
+      border: 0;
+      border-radius: 10px;
+    }
+    button {
+      border: 0;
+      width: 200px;
+      height: 60px;
+      padding: 10px;
+      font-weight: 600;
+      border-radius: 10px;
+      color: #151a26;
+      background: #f2f60f;
+    }
+  }
+  .agry_flex {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    .agry {
+      input {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .agry_text {
+      align-items: center;
+      display: flex;
+      gap: 5px;
+      p {
+        font-size: 18px;
+        width: 200px;
+        font-weight: 400;
+        margin: 0;
+      }
+      a {
+        font-style: 18px;
+        font-weight: 400;
+        color: #f2f60f;
+      }
+    }
+  }
+}

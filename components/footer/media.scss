@@ -1,0 +1,81 @@
+@media (max-width: 966px) {
+  .follow_email {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 17px;
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 713px) {
+  .follow_email {
+    h2 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    margin-bottom: 0;
+  }
+  .follow_email {
+    h2 {
+      font-size: 35px;
+      width: 295px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 0 auto;
+      text-align: center;
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  .follow_email {
+    form {
+      input {
+        width: 50%;
+      }
+      button {
+        width: 30%;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .footer_side {
+    .logo {
+      padding-top: 50px;
+    }
+  }
+  .follow_email {
+    form {
+      text-align: center;
+      display: block;
+      input {
+        width: 60%;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      button {
+        padding: 20px;
+        padding: 20px;
+        width: 60%;
+      }
+    }
+    .agry_flex .agry_text {
+      align-items: center;
+      display: block;
+      gap: 5px;
+    }
+  }
+}
