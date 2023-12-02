@@ -1,5 +1,5 @@
 function footer() {
-  let container = document.querySelector(".container");
+  let footer = document.querySelector("footer");
   let footerSide = document.createElement("div");
   let logo = document.createElement("div");
   let img = document.createElement("img");
@@ -31,7 +31,7 @@ function footer() {
   agry_text_a.innerHTML = "политики конфиденциальности";
   agry_text_a.href = "#";
   button.innerHTML = "Потписаться";
-  container.append(footerSide);
+  footer.append(footerSide);
   footerSide.append(logo, followEMAIL);
   logo.append(img);
   followEMAIL.append(follow_h2, follow_p, follow_form, agry_flex);
