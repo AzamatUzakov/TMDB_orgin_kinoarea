@@ -212,11 +212,36 @@ function header() {
 
 
     header_cont.append(first_option_contener, second_option_contener)
-    
+
     first_option_contener.append(icon_box, hot_hrefs_case, search_and_btn_flex_box)
     icon_box.append(cinem_of_title_flex_case, application_flex_case)
     cinem_of_title_flex_case.append(cinem_of_title_flex_case_cinema_img, cinem_of_title_flex_case_kino_img)
     application_flex_case.append(application_flex_case_vk, application_flex_case_inst, application_flex_case_face, application_flex_case_twit)
-hot_hrefs_case.append(hot_hrefs_case_a_one,hot_hrefs_case_a_two,hot_hrefs_case_a_three,hot_hrefs_case_a_foor,hot_hrefs_case_a_five,hot_hrefs_case_a_six,hot_hrefs_case_a_sevenaF)
+    hot_hrefs_case.append(hot_hrefs_case_a_one, hot_hrefs_case_a_two, hot_hrefs_case_a_three, hot_hrefs_case_a_foor, hot_hrefs_case_a_five, hot_hrefs_case_a_six, hot_hrefs_case_a_seven)
+    search_and_btn_flex_box.append(search_btn, first_add_btn)
+    search_btn.append(search_btn_img)
 
+
+    second_option_contener.append(flex_second_case, hot_href_box, menu)
+    flex_second_case.append(burger_menu_and_search_btn_flex_box, second_icon_box, second_add_btn)
+    burger_menu_and_search_btn_flex_box.append(burger_menu, second_search_btn)
+    burger_menu.append(burger_menu_img)
+    second_search_btn.append(second_search_btn_img)
+    second_icon_box.append(cinem_and_kinoarea_flex_box, aplication_flex_box)
+    cinem_and_kinoarea_flex_box.append(cinem_and_kinoarea_flex_box_first_img, cinem_and_kinoarea_flex_box_second_img)
+    aplication_flex_box.append(aplication_flex_box_vk, aplication_flex_box_inst, aplication_flex_box_face, aplication_flex_box_twit)
+    hot_href_box.append(hot_href_box_one, hot_href_box_two, hot_href_box_three, hot_href_box_foor, hot_href_box_five, hot_href_box_six, hot_href_box_seven)
+
+    menu.append(box)
+    box.append(close_img, icon_case, hot_href_menu)
+    icon_case.append(icon_case_cinem, icon_case_kinoarea)
+    hot_href_menu.append(hot_href_menu_one, one_br, hot_href_menu_two, two_br, hot_href_menu_three, three_br, hot_href_menu_foor, foor_br, hot_href_menu_five, five_br, hot_href_menu_six, six_br, hot_href_menu_seven)
+
+    burger_menu.onclick = () => {
+        menu.style.display = "block"
+    }
+    close_img.onclick = () => {
+        menu.style.display = "none"
+    }
 }
+header()
