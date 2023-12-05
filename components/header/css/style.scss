@@ -45,7 +45,7 @@ header {
                 text-decoration: none;
 
                 &:hover {
-                    color: black;
+                    color: rgb(9, 180, 152);
                     transition: .7s ease;
                 }
 
@@ -86,6 +86,16 @@ header {
                 justify-content: center;
                 border-radius: 10px;
                 padding-left: 3px;
+                cursor: pointer;
+                transition: .3s ease;
+
+                &:hover {
+                    img {
+                        transition: .3s ease;
+
+                        scale: 1.3;
+                    }
+                }
             }
 
             .add_btn {
@@ -98,6 +108,13 @@ header {
                 font-size: 15px;
                 color: white;
                 font-weight: 600;
+                cursor: pointer;
+                transition: .5s ease;
+
+                &:hover {
+                    transition: .5s ease;
+                    scale: 1.1;
+                }
             }
         }
     }
@@ -164,7 +181,7 @@ header {
                     align-items: center;
                     gap: 10px;
                     margin-bottom: 10px;
-                    
+
                 }
 
                 .aplication_flex_box {
@@ -247,25 +264,26 @@ header {
 
             @keyframes modal {
                 from {
-                  top: -600px;
-                  opacity: 0
+                    top: -600px;
+                    opacity: 0
                 }
-              
+
                 to {
-                  right: 0;
-                  opacity: 1
+                    right: 0;
+                    opacity: 1
                 }
-              }
+            }
 
             .box {
 
 
-                .close{
+                .close {
                     position: absolute;
                     right: 10%;
                     cursor: pointer;
                 }
-                .icon_case{
+
+                .icon_case {
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -275,26 +293,26 @@ header {
                 }
 
 
-                .hot_href_menu{
+                .hot_href_menu {
                     display: block;
                     align-items: center;
                     gap: 3%;
                     justify-content: center;
                     margin-top: 10px;
                     text-align: center;
-        
+
                     a {
                         color: #FFF;
                         font-size: 14px;
                         font-weight: 600;
                         text-decoration: none;
-        
+
                         &:hover {
                             color: black;
                             transition: .7s ease;
                         }
-        
-        
+
+
                         &:after {
                             background-color: rgb(58, 193, 247);
                             /* Цвет линии при наведении на нее курсора мыши */
@@ -306,9 +324,9 @@ header {
                             -webkit-transition: width .3s ease-in-out;
                             -moz--transition: width .3s ease-in-out;
                             transition: width .3s ease-in-out;
-        
+
                         }
-        
+
                         &:hover:after,
                         &:focus:after {
                             width: 100%;
