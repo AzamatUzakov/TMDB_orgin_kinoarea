@@ -11,3 +11,16 @@ var swiper = new Swiper(".mySwiper", {
     
 });
  */
+
+
+let fil_titl = document.querySelectorAll('#fil_titl')
+
+
+//fil_titl.forEach = (btn => {
+//  btn.onclick = () => {
+//
+//    //  fil_titl.forEach(btn => btn.classList.remove('active'))
+//    console.log("btn");
+//  }
+//});
+
