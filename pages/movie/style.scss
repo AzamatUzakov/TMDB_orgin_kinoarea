@@ -5,7 +5,6 @@
 }
 
 .show__movie {
-  background: green;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,6 +30,7 @@
       padding: 30px;
       width: 640px;
       height: 450px;
+      border-radius: 15px;
       background: black;
       .movie__name {
         font-weight: 800;
