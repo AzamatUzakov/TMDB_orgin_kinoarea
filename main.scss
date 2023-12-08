@@ -1,0 +1,70 @@
+@media (max-width: 950px) {
+
+
+    
+    .contener {
+        max-width: 1500px;
+    
+    
+        .filter_main_contener {
+            display: block;
+            align-items: center;
+            justify-content: space-between;
+            margin-top:50px;
+            
+    
+            .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #FFF;
+                font-size: 45px;
+                font-weight: 900;
+    margin-bottom: 20px;
+                img {
+                    display: none;
+                    margin-top: 14px;
+                }
+            }
+            .line_arrow{
+                display: none;
+            }
+            .filter_titels {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                font-size: 16px;
+                font-weight: 500;
+                width: 100%;
+                overflow-x: auto;
+    
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+    
+                p {
+                    color: rgba(255, 255, 255, 0.35);
+                    text-decoration: none;
+                    transition: .5s ease;
+                    cursor: pointer;
+                    
+    
+    
+    
+                    &:hover {
+                        color: white;
+                    }
+                }
+    
+                .active {
+                    color: white;
+                    width: 100%;
+                    background-color: rgba(0,0,0,.3294117647);
+                    padding: 4px;
+                    border-radius: 4px;
+                }
+            }
+        }
+    
+    }
+}
