@@ -10,12 +10,17 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   .show__movie__flex {
+    p {
+      font-style: 18px;
+      color: black;
+      font-weight: 600;
+    }
     margin-top: 50px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
     justify-content: center;
     .movie__block {
       border-radius: 15px;
@@ -27,6 +32,8 @@
       background: black;
     }
     .movie__info {
+      margin-bottom: 30px;
+      margin-top: -20px;
       padding: 30px;
       width: 640px;
       height: 450px;
@@ -106,6 +113,36 @@
             height: 20px;
           }
         }
+      }
+    }
+  }
+  .rating__expectation {
+    margin-top: 20px;
+    .rating__expectation_flex {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .rating__expectation_flex__like,
+      .rating__expectation_flex__diselike,
+      .rating__expectation_flex__heard {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background: #1b2133;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .rating__expectation_flex__reyting {
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        background: #1b2133;
+        border-radius: 5px;
+        color: green;
+        font-size: 12px;
       }
     }
   }
