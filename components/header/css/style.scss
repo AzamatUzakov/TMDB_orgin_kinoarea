@@ -43,7 +43,7 @@ header {
                 font-size: 17px;
                 font-weight: 600;
                 text-decoration: none;
-
+cursor: pointer;
                 &:hover {
                     color: rgb(9, 180, 152);
                     transition: .7s ease;
@@ -210,13 +210,14 @@ header {
             gap: 3%;
             justify-content: center;
             margin-top: 24px;
+            cursor: pointer;
 
             a {
                 color: #FFF;
                 font-size: 17px;
                 font-weight: 600;
                 text-decoration: none;
-
+cursor: pointer;
                 &:hover {
                     color: black;
                     transition: .7s ease;
@@ -306,6 +307,7 @@ header {
                         font-size: 14px;
                         font-weight: 600;
                         text-decoration: none;
+                        cursor: pointer;
 
                         &:hover {
                             color: rgb(9, 180, 152);

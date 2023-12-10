@@ -67,9 +67,11 @@ body {
                 margin-top: 14px;
             }
         }
-.line_arrow{
-    display: block;
-}
+
+        .line_arrow {
+            display: block;
+        }
+
         .filter_titels {
             display: flex;
             align-items: center;
@@ -88,7 +90,7 @@ body {
                 text-decoration: none;
                 transition: .5s ease;
                 cursor: pointer;
-                
+
 
 
 
@@ -100,13 +102,13 @@ body {
             .active {
                 color: white;
                 width: 100%;
-                background-color: rgba(0,0,0,.3294117647);
+                background-color: rgba(0, 0, 0, .3294117647);
                 padding: 4px;
                 border-radius: 4px;
             }
         }
     }
-    
+
 
     .menu {
         position: fixed;
@@ -202,4 +204,57 @@ body {
         }
     }
 
+
+    .poster_contener {
+        margin-top: 50px;
+
+        .main_poster_box {
+            width: 270px;
+            height: 375px;
+            //background-color: #1E2538;
+
+            .poster_img {
+                width: 100%;
+                background-image: url(./public/garry.png);
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                border-radius: 7px;
+                position: relative;
+
+                .rating {
+                    position: absolute;
+                    width: 55px;
+                    height: 28px;
+                    border-radius: 5px;
+                    background: #59cb36;
+                    color: #FFF;
+                    font-size: 15px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: 2%;
+                    right: 3%;
+                }
+
+            }
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            p {
+                color: #F2F60F;
+                font-size: 13px;
+                font-weight: 400;
+            }
+        }
+    }
+
 }
+
+/////////contener//////////
