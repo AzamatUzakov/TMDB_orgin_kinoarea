@@ -64,14 +64,12 @@ function poster(arr) {
 
     poster_img.onmouseenter = () => {
       console.log("enter");
-
+      on_hovered.style.display = "block"
       setTimeout(() => {
-        on_hovered.style.display = "block"
-        on_hovered.style.opacity = 1
-        on_hovered.style.scale = 1
-        on_hovered.style.transition = 1.s + "ease"
 
-      }, 5);
+        on_hovered.style.opacity = 1
+      
+      }, 7);
 
     }
 
@@ -79,6 +77,13 @@ function poster(arr) {
       console.log("leave");
       on_hovered.style.display = "none"
 
+      setTimeout(() => {
+
+        on_hovered.style.opacity = 0
+
+//       movie_card_btn.style.scale = 0
+     
+      }, 7);
     }
 
   }

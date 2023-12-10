@@ -119,7 +119,7 @@ body {
         background-color: #1e2538d8;
         padding: 32px 0 40px;
         backdrop-filter: blur(2px);
-
+z-index: 99;
         transition: 0.7s ease;
         opacity: 1;
         animation-duration: 0.7s;
@@ -253,7 +253,7 @@ body {
                     border-radius: 10px;
                     background: rgba(54, 87, 203, 0.65);
                     transition: .9s ease;
-                    scale: 0;
+                    //scale: 0;
                     opacity: 0;
                     
 
@@ -262,7 +262,7 @@ body {
                         position: absolute;
                         top: 45%;
                         left: 50%;
-                        //transform: translatey(-50% -50% );
+                        transform: translatey( -50% );
                         transform: translatex(-50%);
                         width: 170px;
                         height: 50px;
@@ -270,7 +270,12 @@ body {
                         border: 0;
                         color: #3657CB;
                         font-size: 15px;
+                 //     scale: 0;
+
+                       // opacity: 0;
                         font-weight: 600;
+                        transition: .9s ease;
+                        cursor: pointer;
 
                     }
                 }
