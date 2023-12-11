@@ -30,7 +30,7 @@ close_img.onclick = () => {
 
 function poster(arr) {
 
-  for (let item = 0; item < 10; item++) {
+  for (let item of arr) {
     let poster_contener = document.querySelector('.poster_contener')
 
     let main_poster_box = document.createElement('div')
