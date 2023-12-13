@@ -119,7 +119,7 @@ body {
         background-color: #1e2538d8;
         padding: 32px 0 40px;
         backdrop-filter: blur(2px);
-z-index: 99;
+        z-index: 99;
         transition: 0.7s ease;
         opacity: 1;
         animation-duration: 0.7s;
@@ -204,98 +204,114 @@ z-index: 99;
         }
     }
 
-    .poster_contener {
-        margin-top: 50px;
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        row-gap: 70px;
+    .main_poster_contener {
+        .poster_contener {
+            margin-top: 50px;
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 70px;
 
-        .main_poster_box {
-            width: 265px;
-            height: 375px;
-            //background-color: #1E2538;
+            .main_poster_box {
+                width: 265px;
+                height: 375px;
+                //background-color: #1E2538;
 
-            .poster_img {
-                width: 100%;
-                background-image: url(./public/garry.png);
-                height: 100%;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                border-radius: 10px;
-                position: relative;
-
-                .rating {
-                    position: absolute;
-                    width: 55px;
-                    height: 28px;
-                    border-radius: 5px;
-                    background: #59cb36;
-                    color: #FFF;
-                    font-size: 15px;
-                    font-weight: 500;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    top: 2%;
-                    right: 3%;
-                    z-index: 2;
-                }
-
-
-                .on_hovered {
-                    display: none;
+                .poster_img {
                     width: 100%;
+                    background-image: url(./public/garry.png);
                     height: 100%;
-                    position: relative;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
                     border-radius: 10px;
-                    background: rgba(54, 87, 203, 0.65);
-                    transition: .9s ease;
-                    //scale: 0;
-                    opacity: 0;
-                    
+                    position: relative;
 
-
-                    .movie_card_btn {
+                    .rating {
                         position: absolute;
-                        top: 45%;
-                        left: 50%;
-                        transform: translatey( -50% );
-                        transform: translatex(-50%);
-                        width: 170px;
-                        height: 50px;
-                        border-radius: 7px;
-                        border: 0;
-                        color: #3657CB;
+                        width: 55px;
+                        height: 28px;
+                        border-radius: 5px;
+                        background: #59cb36;
+                        color: #FFF;
                         font-size: 15px;
-                 //     scale: 0;
-
-                       // opacity: 0;
-                        font-weight: 600;
-                        transition: .9s ease;
-                        cursor: pointer;
-
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: 2%;
+                        right: 3%;
+                        z-index: 2;
                     }
+
+
+                    .on_hovered {
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        border-radius: 10px;
+                        background: rgba(54, 87, 203, 0.65);
+                        transition: .9s ease;
+                        //scale: 0;
+                        opacity: 0;
+
+
+
+                        .movie_card_btn {
+                            position: absolute;
+                            top: 45%;
+                            left: 50%;
+                            transform: translatey(-50%);
+                            transform: translatex(-50%);
+                            width: 170px;
+                            height: 50px;
+                            border-radius: 7px;
+                            border: 0;
+                            color: #3657CB;
+                            font-size: 15px;
+                            //     scale: 0;
+
+                            // opacity: 0;
+                            font-weight: 600;
+                            transition: .9s ease;
+                            cursor: pointer;
+
+                        }
+                    }
+
                 }
 
-            }
+                h3 {
+                    color: #FFF;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
 
-            h3 {
-                color: #FFF;
-                font-size: 16px;
-                font-weight: 700;
-            }
-
-            p {
-                color: #F2F60F;
-                font-size: 13px;
-                font-weight: 400;
+                p {
+                    color: #F2F60F;
+                    font-size: 13px;
+                    font-weight: 400;
+                }
             }
         }
-    }
 
+        .add_new_btn {
+            width: 180px;
+            height: 65px;
+            border-radius: 10px;
+            border: 2px solid #FFF;
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            color: white;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 100px;
+            cursor: pointer;
+        }
+    }
 }
 
 

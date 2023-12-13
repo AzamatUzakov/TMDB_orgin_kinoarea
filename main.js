@@ -28,10 +28,7 @@ close_img.onclick = () => {
 
 
 
-function poster(arr) {
-
-  for (let item of arr) {
-    let poster_contener = document.querySelector('.poster_contener')
+  let poster_contener = document.querySelector('.poster_contener')
 
     let main_poster_box = document.createElement('div')
     let poster_img = document.createElement('div')
@@ -68,7 +65,7 @@ function poster(arr) {
       setTimeout(() => {
 
         on_hovered.style.opacity = 1
-      
+
       }, 7);
 
     }
@@ -81,12 +78,9 @@ function poster(arr) {
 
         on_hovered.style.opacity = 0
 
-//       movie_card_btn.style.scale = 0
-     
+        //       movie_card_btn.style.scale = 0
+
       }, 7);
     }
 
-  }
-}
-
-poster()
+  
