@@ -204,7 +204,6 @@ body {
         }
     }
 
-    .main_poster_contener {
         .poster_contener {
             margin-top: 50px;
             display: flex;
@@ -220,7 +219,7 @@ body {
 
                 .poster_img {
                     width: 100%;
-                    background-image: url(./public/garry.png);
+                    background-image: url();
                     height: 100%;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -295,8 +294,10 @@ body {
                     font-weight: 400;
                 }
             }
-        }
+        
 
+       
+        }
         .add_new_btn {
             width: 180px;
             height: 65px;
@@ -309,9 +310,15 @@ body {
             align-items: center;
             margin: 0 auto;
             margin-top: 100px;
+            transition: .5s ease;
             cursor: pointer;
-        }
+            &:hover{
+                font-size: 17px;
+                color:#3657CB ;
+                border-color:#3657CB ;
+            }
     }
+
 }
 
 
