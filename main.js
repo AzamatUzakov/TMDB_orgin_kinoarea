@@ -12,9 +12,9 @@ let Auto_res = {
 }
 let showingAllPosters = false
 let poster_contener = document.querySelector('.poster_contener')
+let rear_background = document.querySelector('.rear_background')
 
-
-
+ 
 
 fil_titl.forEach(btn => {
   btn.onclick = () => {
@@ -56,7 +56,6 @@ function reload_NowPlaying(arr) {
     let main_poster_box_h3 = document.createElement('h3')
     let main_poster_box_p = document.createElement('p')
 
-    let slice_reytings = item.vote_average
 
 
     movie_card_btn.innerHTML = "Карточка фильма"
@@ -80,13 +79,19 @@ function reload_NowPlaying(arr) {
     on_hovered.append(movie_card_btn)
 
 
-
-
+    movie_card_btn.onclick = () => {
+      location.href = "/pages/movie/index.html?id" = item.id
+      let poster_id = localStorage.setItem("post_id", item.title)
+      //let poster_id = location.search.split('=').at(-1)
+      console.log(poster_id);
+ 
+    }
+   
     poster_img.onmouseenter = () => {
       console.log("enter");
       on_hovered.style.display = "block"
       setTimeout(() => {
-
+        rear_background.style.backgroundImage = `url(${PICTURE_URL + item.backdrop_path})`
         on_hovered.style.opacity = 1
 
       }, 7);
@@ -107,7 +112,11 @@ function reload_NowPlaying(arr) {
       // showPosters.style.scale = '0.8'
       showingAllPosters = !showingAllPosters
       reload_NowPlaying(arr)
+
     }
+
+
+
   }
 
 
