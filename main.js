@@ -10,6 +10,8 @@ let Auto_res = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M'
   }
 }
+let showingAllPosters = false
+let poster_contener = document.querySelector('.poster_contener')
 
 
 
@@ -38,11 +40,14 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Au
 
 
 function reload_NowPlaying(arr) {
+  poster_contener.innerHTML = ""
   console.log(arr);
-  for (let item of arr) {
+  const toShow = showingAllPosters ? arr.length : 8
 
-    let poster_contener = document.querySelector('.poster_contener')
+  for (let item of arr.slice(0, toShow)) {
 
+
+    let add_new_btn = document.querySelector('.add_new_btn')
     let main_poster_box = document.createElement('div')
     let poster_img = document.createElement('div')
     let on_hovered = document.createElement('div')
@@ -51,15 +56,15 @@ function reload_NowPlaying(arr) {
     let main_poster_box_h3 = document.createElement('h3')
     let main_poster_box_p = document.createElement('p')
 
-    let slice_reytings = item.vote_average.splice(0,3)
+    let slice_reytings = item.vote_average
+
 
     movie_card_btn.innerHTML = "Карточка фильма"
-    rating.innerHTML = slice_reytings
+    rating.innerHTML = item.vote_average.toFixed(1)
     main_poster_box_h3.innerHTML = item.title
     main_poster_box_p.innerHTML = "Триллер"
-  //  people_img.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${item_cast.profile_path} )`
 
-    poster_img.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`
+    poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
 
     main_poster_box.classList.add("main_poster_box")
     poster_img.classList.add("poster_img")
@@ -73,6 +78,8 @@ function reload_NowPlaying(arr) {
     main_poster_box.append(poster_img, main_poster_box_h3, main_poster_box_p)
     poster_img.append(on_hovered, rating)
     on_hovered.append(movie_card_btn)
+
+
 
 
     poster_img.onmouseenter = () => {
@@ -91,13 +98,18 @@ function reload_NowPlaying(arr) {
       on_hovered.style.display = "none"
 
       setTimeout(() => {
-
         on_hovered.style.opacity = 0
-
-        //       movie_card_btn.style.scale = 0
-
       }, 7);
     }
+
+    add_new_btn.innerHTML = showingAllPosters ? 'Скрыть' : 'Показать все'
+    add_new_btn.onclick = () => {
+      // showPosters.style.scale = '0.8'
+      showingAllPosters = !showingAllPosters
+      reload_NowPlaying(arr)
+    }
   }
+
+
 }
 
