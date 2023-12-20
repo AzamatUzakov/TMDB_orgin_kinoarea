@@ -51,12 +51,15 @@ function reload_NowPlaying(arr) {
     let main_poster_box_h3 = document.createElement('h3')
     let main_poster_box_p = document.createElement('p')
 
+    let slice_reytings = item.vote_average.splice(0,3)
+
     movie_card_btn.innerHTML = "Карточка фильма"
-    rating.innerHTML = item.vote_average
+    rating.innerHTML = slice_reytings
     main_poster_box_h3.innerHTML = item.title
     main_poster_box_p.innerHTML = "Триллер"
+  //  people_img.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${item_cast.profile_path} )`
 
-    poster_img.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path}}`
+    poster_img.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`
 
     main_poster_box.classList.add("main_poster_box")
     poster_img.classList.add("poster_img")
