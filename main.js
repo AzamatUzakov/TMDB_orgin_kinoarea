@@ -14,7 +14,7 @@ let showingAllPosters = false
 let poster_contener = document.querySelector('.poster_contener')
 let rear_background = document.querySelector('.rear_background')
 
- 
+
 
 fil_titl.forEach(btn => {
   btn.onclick = () => {
@@ -80,8 +80,8 @@ function reload_NowPlaying(arr) {
 
 
     movie_card_btn.onclick = () => {
-      location.href = "/pages/movie/index.html?id" = item.id
-      let poster_id = localStorage.setItem("post_id", item.title)
+      location.href = "/pages/movie/index.html?id="+ item.id
+      let poster_id = localStorage.setItem("post_id", item.id)
       //let poster_id = location.search.split('=').at(-1)
       console.log(poster_id);
  

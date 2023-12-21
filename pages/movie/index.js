@@ -1,2 +1,6 @@
-let poster_id = location.search.split('=').at(-1)
-console.log(localStorage.getItem("post_id"));
+let poster_id = localStorage.getItem('post_id')
+console.log(poster_id);
+
+
+/////////////Мухаммади кут бля кун kinoarea мана 
+/////////////id гивта додам отрисовка кун чумо
