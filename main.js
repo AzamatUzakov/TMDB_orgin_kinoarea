@@ -71,6 +71,12 @@ function reload_NowPlaying(arr) {
     poster_img.append(on_hovered, rating);
     on_hovered.append(movie_card_btn);
 
+    movie_card_btn.onclick = () => {
+      location.href = "/pages/movie/index.html?id=" + item.id;
+      let poster_id = localStorage.setItem("post_id", item.id);
+      //let poster_id = location.search.split('=').at(-1)
+      console.log(poster_id);
+    };
 
     poster_img.onmouseenter = () => {
       console.log("enter");
