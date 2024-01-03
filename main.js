@@ -141,9 +141,7 @@ function reload_NowPlaying(arr) {
           for (let gen_arr of genres) {
             if (gen_arr.name === "Horror") {
               horor_arr.push(gen_arr)
-            }else if (gen_arr.name === "Comedy"){
-              comedy_arr.push(gen_arr)
-            }
+            }else if (gen_arr.name === "Comedy")
            
           }
         }
@@ -154,3 +152,4 @@ function reload_NowPlaying(arr) {
   }
 
 }
+console.log(horor_arr);
