@@ -41,7 +41,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Au
 
 function reload_NowPlaying(arr) {
   poster_contener.innerHTML = ""
-  console.log(arr);
+  //console.log(arr);
   const toShow = showingAllPosters ? arr.length : 8
 
   for (let item of arr.slice(0, toShow)) {
@@ -61,7 +61,6 @@ function reload_NowPlaying(arr) {
     movie_card_btn.innerHTML = "Карточка фильма"
     rating.innerHTML = item.vote_average.toFixed(1)
     main_poster_box_h3.innerHTML = item.title
-    main_poster_box_p.innerHTML = "Триллер"
 
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
 
@@ -80,13 +79,13 @@ function reload_NowPlaying(arr) {
 
 
     movie_card_btn.onclick = () => {
-      location.href = "/pages/movie/index.html?id="+ item.id
+      location.href = "/pages/movie/index.html?id=" + item.id
       let poster_id = localStorage.setItem("post_id", item.id)
       //let poster_id = location.search.split('=').at(-1)
       console.log(poster_id);
- 
+
     }
-   
+
     poster_img.onmouseenter = () => {
       console.log("enter");
       on_hovered.style.display = "block"
@@ -113,12 +112,24 @@ function reload_NowPlaying(arr) {
       showingAllPosters = !showingAllPosters
       reload_NowPlaying(arr)
 
+
+
+
     }
 
 
 
+
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
+      .then((res) => res.json())
+      .then((res) => {
+        let info_ganr_tx = ``
+        for (const el of item.genre_ids) {
+          const genres = res.genres.filter(obj => obj.id === el);
+          info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+        }
+        main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
+      })
   }
 
-
 }
-
