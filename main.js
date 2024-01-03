@@ -32,6 +32,15 @@ close_img.onclick = () => {
   menu.style.display = "none"
 }
 
+let horor_arr = []
+let comedy_arr=[]
+let criminal_arr=[]
+let drama_arr=[]
+let fantasy_arr=[]
+let action_arr=[]
+let family_arr=[]
+
+
 
 fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Auto_res)
   .then(res => res.json())
@@ -60,7 +69,8 @@ function reload_NowPlaying(arr) {
 
     movie_card_btn.innerHTML = "Карточка фильма"
     rating.innerHTML = item.vote_average.toFixed(1)
-    main_poster_box_h3.innerHTML = item.title
+    main_poster_box_h3.innerHTML = item.title.slice(0, 35)
+
 
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
 
@@ -123,13 +133,25 @@ function reload_NowPlaying(arr) {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
       .then((res) => res.json())
       .then((res) => {
+        //        console.log(res);
         let info_ganr_tx = ``
         for (const el of item.genre_ids) {
           const genres = res.genres.filter(obj => obj.id === el);
           info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+          for (let gen_arr of genres) {
+            if (gen_arr.name === "Horror") {
+              horor_arr.push(gen_arr)
+            }else if (gen_arr.name === "Comedy"){
+              comedy_arr.push(gen_arr)
+            }
+           
+          }
         }
         main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
+
+
       })
   }
 
 }
+console.log(horor_arr);
