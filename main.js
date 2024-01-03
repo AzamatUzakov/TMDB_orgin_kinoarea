@@ -154,4 +154,3 @@ function reload_NowPlaying(arr) {
   }
 
 }
-console.log(horor_arr);
