@@ -16,6 +16,9 @@ let rear_background = document.querySelector('.rear_background')
 
 
 
+
+
+
 fil_titl.forEach(btn => {
   btn.onclick = () => {
 
@@ -49,8 +52,9 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Au
 
 
 function reload_NowPlaying(arr) {
+
   poster_contener.innerHTML = ""
-  //console.log(arr);
+  console.log(arr);
   const toShow = showingAllPosters ? arr.length : 8
 
   for (let item of arr.slice(0, toShow)) {
@@ -97,7 +101,6 @@ function reload_NowPlaying(arr) {
     }
 
     poster_img.onmouseenter = () => {
-      console.log("enter");
       on_hovered.style.display = "block"
       setTimeout(() => {
         rear_background.style.backgroundImage = `url(${PICTURE_URL + item.backdrop_path})`
@@ -108,7 +111,6 @@ function reload_NowPlaying(arr) {
     }
 
     poster_img.onmouseleave = () => {
-      console.log("leave");
       on_hovered.style.display = "none"
 
       setTimeout(() => {
@@ -130,25 +132,34 @@ function reload_NowPlaying(arr) {
 
 
 
-    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=ru`, Auto_res)
       .then((res) => res.json())
       .then((res) => {
-        //        console.log(res);
+             console.log(res);
         let info_ganr_tx = ``
         for (const el of item.genre_ids) {
+          
           const genres = res.genres.filter(obj => obj.id === el);
           info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+
           for (let gen_arr of genres) {
+          //  console.log(gen_arr);
             if (gen_arr.name === "Horror") {
               horor_arr.push(gen_arr)
-            }else if (gen_arr.name === "Comedy")
+            }else if (gen_arr.name === "Comedy"){
+              
+            }
            
           }
+        
         }
         main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
-
-
       })
+
+
+
+      
+      
   }
 
 }
