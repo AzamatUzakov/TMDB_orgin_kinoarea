@@ -16,7 +16,7 @@ let rear_background = document.querySelector('.rear_background')
 
 
 
-
+let horrorBtn = document.querySelector('.horror')
 
 
 fil_titl.forEach(btn => {
@@ -36,12 +36,12 @@ close_img.onclick = () => {
 }
 
 let horor_arr = []
-let comedy_arr=[]
-let criminal_arr=[]
-let drama_arr=[]
-let fantasy_arr=[]
-let action_arr=[]
-let family_arr=[]
+let comedy_arr = []
+let criminal_arr = []
+let drama_arr = []
+let fantasy_arr = []
+let action_arr = []
+let family_arr = []
 
 
 
@@ -70,10 +70,10 @@ function reload_NowPlaying(arr) {
     let main_poster_box_p = document.createElement('p')
 
 
-
+    let fixed_gnr = item.vote_average
     movie_card_btn.innerHTML = "Карточка фильма"
-    rating.innerHTML = item.vote_average.toFixed(1)
-    main_poster_box_h3.innerHTML = item.title.slice(0, 35)
+    rating.innerHTML =fixed_gnr
+      main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
 
 
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
@@ -132,35 +132,46 @@ function reload_NowPlaying(arr) {
 
 
 
-    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=ru`, Auto_res)
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
       .then((res) => res.json())
       .then((res) => {
-             console.log(res);
+        console.log(res);
         let info_ganr_tx = ``
         for (const el of item.genre_ids) {
-          
+
           const genres = res.genres.filter(obj => obj.id === el);
           info_ganr_tx = info_ganr_tx + genres[0].name + `, `
 
           for (let gen_arr of genres) {
-          //  console.log(gen_arr);
+            //  console.log(gen_arr);
             if (gen_arr.name === "Horror") {
               horor_arr.push(gen_arr)
-            }else if (gen_arr.name === "Comedy"){
-              
+            } else if (gen_arr.name === "Comedy") {
+              comedy_arr.push(gen_arr)
             }
-           
+
           }
-        
+
+
         }
         main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
+
+
+
       })
 
 
 
-      
-      
+
+
+
   }
 
+
+
 }
-console.log(horor_arr);
+horrorBtn.onclick = () => {
+  reload_NowPlaying(comedy_arr)
+}
+
+console.log(horor_arr, comedy_arr);
