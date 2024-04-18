@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { all } from "axios"
 const PICTURE_URL = import.meta.env.VITE_PICTURE_URL
 
 let fil_titl = document.querySelectorAll('.hrefs')
@@ -37,6 +37,7 @@ close_img.onclick = () => {
 
 let horor_arr = []
 let comedy_arr = []
+let all_arr
 let criminal_arr = []
 let drama_arr = []
 let fantasy_arr = []
@@ -135,30 +136,33 @@ function reload_NowPlaying(arr) {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+       //console.log(res);
         let info_ganr_tx = ``
         for (const el of item.genre_ids) {
-
           const genres = res.genres.filter(obj => obj.id === el);
           info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+          console.log(genres);
 
-          for (let gen_arr of genres) {
-            //  console.log(gen_arr);
-            if (gen_arr.name === "Horror") {
-              horor_arr.push(gen_arr)
-            } else if (gen_arr.name === "Comedy") {
-              comedy_arr.push(gen_arr)
-            }
-
+          
+          if(item.genre_ids === el){
+          all_arr.push(item)
           }
+/*   for (item.genre_ids of info_ganr_tx) {
+     console.log(item);
+    if (item === "Horror") {
+      horor_arr.push(item)
+    } else if (item.genre_ids === "Comedy") {
+      comedy_arr.push(item)
+    }
 
+  } */
 
         }
         main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
 
 
-
       })
+
 
 
 
@@ -173,5 +177,5 @@ function reload_NowPlaying(arr) {
 horrorBtn.onclick = () => {
   reload_NowPlaying(comedy_arr)
 }
+console.log(all_arr);
 
-console.log(horor_arr, comedy_arr);
