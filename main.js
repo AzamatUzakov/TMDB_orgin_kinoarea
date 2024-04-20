@@ -72,7 +72,7 @@ function reload_NowPlaying(arr) {
 
 
     let fixed_gnr = item.vote_average
-    movie_card_btn.innerHTML = "Карточка фильма"
+    movie_card_btn.innerHTML = "0"
     rating.innerHTML =fixed_gnr
       main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
 
