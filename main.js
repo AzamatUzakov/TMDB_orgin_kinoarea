@@ -55,7 +55,6 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Au
 function reload_NowPlaying(arr) {
 
   poster_contener.innerHTML = ""
-  console.log(arr);
   const toShow = showingAllPosters ? arr.length : 8
 
   for (let item of arr.slice(0, toShow)) {
@@ -71,10 +70,9 @@ function reload_NowPlaying(arr) {
     let main_poster_box_p = document.createElement('p')
 
 
-    let fixed_gnr = item.vote_average
+    rating.innerHTML = item.vote_average.toFixed(1, 2)
     movie_card_btn.innerHTML = "Карточка фильма"
-    rating.innerHTML =fixed_gnr
-      main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
+    main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
 
 
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
@@ -97,7 +95,6 @@ function reload_NowPlaying(arr) {
       location.href = "/pages/movie/index.html?id=" + item.id
       let poster_id = localStorage.setItem("post_id", item.id)
       //let poster_id = location.search.split('=').at(-1)
-      console.log(poster_id);
 
     }
 
@@ -136,46 +133,80 @@ function reload_NowPlaying(arr) {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
       .then((res) => res.json())
       .then((res) => {
-       //console.log(res);
+        //console.log(res);
         let info_ganr_tx = ``
         for (const el of item.genre_ids) {
           const genres = res.genres.filter(obj => obj.id === el);
           info_ganr_tx = info_ganr_tx + genres[0].name + `, `
-          console.log(genres);
 
-          
-          if(item.genre_ids === el){
-          all_arr.push(item)
+
+          if (item.genre_ids === el) {
+            all_arr.push(item)
           }
-/*   for (item.genre_ids of info_ganr_tx) {
-     console.log(item);
-    if (item === "Horror") {
-      horor_arr.push(item)
-    } else if (item.genre_ids === "Comedy") {
-      comedy_arr.push(item)
-    }
-
-  } */
+          /*   for (item.genre_ids of info_ganr_tx) {
+               console.log(item);
+              if (item === "Horror") {
+                horor_arr.push(item)
+              } else if (item.genre_ids === "Comedy") {
+                comedy_arr.push(item)
+              }
+          
+            } */
 
         }
         main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
 
 
       })
+  }
+}
 
 
 
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Auto_res)
+  .then(res => res.json())
+  .then(res => showTrailers(res.results))
 
 
 
+function showTrailers(arr) {
+  let trailerList_box = document.querySelector('.trailer__list__box')
+  console.log(arr);
+  for (let item of arr) {
 
+    let listElem = document.createElement('div')
+    let posters = document.createElement('div')
+    let player = document.createElement('div')
+    let playerImg = document.createElement('img')
+    let mantle = document.createElement('div')
+    let trNamae = document.createElement('div')
+
+    listElem.classList.add('list__elem')
+    posters.classList.add('posters_')
+    player.classList.add('player_')
+    trNamae.classList.add('trailer__name')
+
+    playerImg.src = "public/Polygon 2.png"
+    trNamae.innerHTML = item.title.slice(0,20)+"..."
+    posters.style.backgroundImage = `url(${PICTURE_URL + item.backdrop_path})`
+
+
+    trailerList_box.append(listElem)
+    listElem.append(posters,trNamae)
+    posters.append(player,mantle)
+    player.append(playerImg)
+
+    listElem.onmouseenter = () => {
+      mantle.classList.add('active__mantle')
+    
+
+    }
+
+    listElem.onmouseleave = () => {
+      mantle.classList.remove('active__mantle')
+
+
+    }
   }
 
-
-
 }
-horrorBtn.onclick = () => {
-  reload_NowPlaying(comedy_arr)
-}
-console.log(all_arr);
-
