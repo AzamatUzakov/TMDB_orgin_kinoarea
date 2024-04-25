@@ -12,9 +12,11 @@ let Auto_res = {
 }
 let showingAllPosters = false
 let poster_contener = document.querySelector('.poster_contener')
+let popular_contener = document.querySelector('.popular_box')
+
 let rear_background = document.querySelector('.rear_background')
 
-
+let trailerIframe = document.querySelector('.trailer iframe')
 
 let horrorBtn = document.querySelector('.horror')
 
@@ -167,11 +169,9 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', Au
   .then(res => res.json())
   .then(res => showTrailers(res.results))
 
-
-
 function showTrailers(arr) {
   let trailerList_box = document.querySelector('.trailer__list__box')
-  console.log(arr);
+  
   for (let item of arr) {
 
     let listElem = document.createElement('div')
@@ -187,18 +187,18 @@ function showTrailers(arr) {
     trNamae.classList.add('trailer__name')
 
     playerImg.src = "public/Polygon 2.png"
-    trNamae.innerHTML = item.title.slice(0,20)+"..."
+    trNamae.innerHTML = item.title.slice(0, 20) + "..."
     posters.style.backgroundImage = `url(${PICTURE_URL + item.backdrop_path})`
 
 
     trailerList_box.append(listElem)
-    listElem.append(posters,trNamae)
-    posters.append(player,mantle)
+    listElem.append(posters, trNamae)
+    posters.append(player, mantle)
     player.append(playerImg)
 
     listElem.onmouseenter = () => {
       mantle.classList.add('active__mantle')
-    
+
 
     }
 
@@ -207,6 +207,92 @@ function showTrailers(arr) {
 
 
     }
-  }
 
+
+    fetch(`https://api.themoviedb.org/3/movie/${item.id}/videos`, Auto_res)
+      .then(res => res.json())
+      .then(res => {
+        let rnd = Math.floor(Math.random() * res.results.length)
+        let selectedMovie = res.results[rnd]
+
+        player.onclick = () => {
+          trailerIframe.src = `https://www.youtube.com/embed/${selectedMovie.key}`
+        }
+        mantle.onclick = () => {
+          trailerIframe.src = `https://www.youtube.com/embed/${selectedMovie.key}`
+        }
+
+      })
+
+  }
 }
+
+
+
+fetch("https://api.themoviedb.org/3/movie/popular", Auto_res)
+.then(res=> res.json())
+.then(res=>popular_films(res.results))
+function popular_films(arr) {
+  for(let item of arr){
+    let main_poster_box = document.createElement('div')
+    let poster_img = document.createElement('div')
+    let on_hovered = document.createElement('div')
+    let movie_card_btn = document.createElement('button')
+    let rating = document.createElement('div')
+    let main_poster_box_h3 = document.createElement('h3')
+    let main_poster_box_p = document.createElement('p')
+
+
+    rating.innerHTML = item.vote_average.toFixed(1, 2)
+    movie_card_btn.innerHTML = "Карточка фильма"
+    main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
+
+
+    poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
+
+    main_poster_box.classList.add("main_poster_box")
+    poster_img.classList.add("poster_img")
+    on_hovered.classList.add("on_hovered")
+    movie_card_btn.classList.add("movie_card_btn")
+    rating.classList.add("rating")
+    main_poster_box_h3.classList.add("h3")
+    main_poster_box_p.classList.add("p")
+
+    popular_contener.append(main_poster_box)
+    main_poster_box.append(poster_img, main_poster_box_h3, main_poster_box_p)
+    poster_img.append(on_hovered, rating)
+    on_hovered.append(movie_card_btn)
+
+
+    movie_card_btn.onclick = () => {
+      location.href = "/pages/movie/index.html?id=" + item.id
+      let poster_id = localStorage.setItem("post_id", item.id)
+      //let poster_id = location.search.split('=').at(-1)
+
+    }
+
+    poster_img.onmouseenter = () => {
+      on_hovered.style.display = "block"
+      setTimeout(() => {
+        rear_background.style.backgroundImage = `url(${PICTURE_URL + item.backdrop_path})`
+        on_hovered.style.opacity = 1
+
+      }, 7);
+
+    }
+
+    poster_img.onmouseleave = () => {
+      on_hovered.style.display = "none"
+
+      setTimeout(() => {
+        on_hovered.style.opacity = 0
+      }, 7);
+    }
+
+
+
+  }
+}
+
+
+

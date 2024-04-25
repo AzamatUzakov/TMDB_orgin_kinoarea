@@ -77,7 +77,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 240px;
                 height: 350px;
@@ -163,7 +163,6 @@
         }
 
     }
-}
 
 //max-width:950px
 
@@ -250,7 +249,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 220px;
                 height: 330px;
@@ -336,7 +335,7 @@
         }
 
     }
-}
+
 
 //max-width:790//
 
@@ -532,7 +531,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 200px;
                 height: 290px;
@@ -723,6 +722,82 @@
         }
 
     }
+
+
+
+    
+.trailer__list__box {
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;    height: 300px;
+
+    transform: rotateX(180deg);
+&::-webkit-scrollbar{
+    width: 100%;
+    height: 10px;
+    margin: 10px;
+}
+&::-webkit-scrollbar-track{
+    background: #1B2133;
+    border-radius: 10px;
+    border: 0;
+}
+&::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: #3657CB;
+}
+    .list__elem {
+        width: 250px !important;
+        transform: rotateX(180deg);
+        margin-top: 20px;
+        width: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .posters_ {
+            background-image: url(https://iimg.su/s/23/WoUwe9XLtjAvoVIUBKNrVIzlyQgmjFadsq3FLCJw.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 250px !important;
+            height: 190px;
+            position: relative;
+            border-radius: 10px;
+
+            .player_ {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                object-fit: cover;
+                z-index: 10;
+            }
+
+          
+
+        }
+
+        .trailer__name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #FFF;
+
+        }
+    }
+    .active__mantle{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #3657CBA6;
+        border-radius: 10px;
+        transition: .5s ease;
+    }
 }
 
 //max-width: 590px
@@ -834,7 +909,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 180px;
                 height: 250px;
@@ -1027,7 +1102,75 @@
 
         }
     }
+
+    
+.trailer__list__box {
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 260px;
+
+    transform: rotateX(180deg);
+&::-webkit-scrollbar{
+    width: 100%;
+    height: 10px;
+    margin: 10px;
 }
+&::-webkit-scrollbar-track{
+    background: #1B2133;
+    border-radius: 10px;
+    border: 0;
+}
+&::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: #3657CB;
+}
+    .list__elem {
+        width: 200px !important;
+        transform: rotateX(180deg);
+        margin-top: 20px;
+        width: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .posters_ {
+            background-image: url(https://iimg.su/s/23/WoUwe9XLtjAvoVIUBKNrVIzlyQgmjFadsq3FLCJw.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 200px !important;
+            height: 140px;
+            position: relative;
+            border-radius: 10px;
+
+            .player_ {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                object-fit: cover;
+                z-index: 10;
+            }
+
+          
+
+        }
+
+        .trailer__name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFF;
+
+        }
+    }
+   
+}
+
 
 //max-width: 470
 
@@ -1126,7 +1269,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 160px;
                 height: 230px;
@@ -1211,7 +1354,6 @@
             }
         }
     }
-}
 
 /////390////
 
@@ -1313,7 +1455,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             row-gap: 70px;
-
+        }
             .main_poster_box {
                 width: 120px;
                 height: 170px;
@@ -1398,6 +1540,5 @@
             }
         }
     }
-}
 
 //max-width: 280px
