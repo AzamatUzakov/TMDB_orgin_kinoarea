@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./components/header/css/media.scss" />
   <link rel="stylesheet" href="./components/footer/style.scss">
   <link rel="stylesheet" href="/components/footer/media.scss">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -127,8 +128,29 @@
 
 
         <div class="popular__films">
-          <div class="popular_box">
-            
+          <div class="pop_head_box ">
+            <h1>Популярные фильмы</h1>
+            <img src="/public/Line 1.png" alt="">
+            <div class="film_date__box">
+              <a href="#">Всё время</a>
+              <a href="#">2024</a>
+              <a href="#">2023</a>
+              <a href="#">2022</a>
+              <a href="#">2021</a>
+              <a href="#">2020</a>
+              <a href="#">2019</a>
+              <a href="#">2018</a>
+              <a href="#">2017</a>
+              <a href="#">2016</a>
+            </div>
+          </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
         <footer></footer>
@@ -138,9 +160,14 @@
 
 
     <!--  <script src="/components/footer/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./modules/swiper.js"></script>
     <script src="./components/header/index.js"></script>
     <script type="module" src="/main.js"></script>
+    <script src="./components/footer/index.js"></script>
     <script type="module" src="/modules/trailer.js"></script>
+
 </body>
 
 </html>

@@ -535,3 +535,25 @@ body {
     justify-content: space-between;
     row-gap: 70px;
 }
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    align-items: center;
+
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: 285px !important;
+    border-radius: 12px;
+}
+
+/////////////////popular__cont end zone ///////////////////

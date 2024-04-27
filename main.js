@@ -12,7 +12,6 @@ let Auto_res = {
 }
 let showingAllPosters = false
 let poster_contener = document.querySelector('.poster_contener')
-let popular_contener = document.querySelector('.popular_box')
 
 let rear_background = document.querySelector('.rear_background')
 
@@ -233,7 +232,11 @@ fetch("https://api.themoviedb.org/3/movie/popular", Auto_res)
 .then(res=> res.json())
 .then(res=>popular_films(res.results))
 function popular_films(arr) {
+  let popular_contener = document.querySelector('.swiper-wrapper')
+
   for(let item of arr){
+    let swiperSlide = document.createElement('div')
+
     let main_poster_box = document.createElement('div')
     let poster_img = document.createElement('div')
     let on_hovered = document.createElement('div')
@@ -250,6 +253,8 @@ function popular_films(arr) {
 
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
 
+
+    swiperSlide.classList.add('swiper-slide')
     main_poster_box.classList.add("main_poster_box")
     poster_img.classList.add("poster_img")
     on_hovered.classList.add("on_hovered")
@@ -258,7 +263,8 @@ function popular_films(arr) {
     main_poster_box_h3.classList.add("h3")
     main_poster_box_p.classList.add("p")
 
-    popular_contener.append(main_poster_box)
+    popular_contener.append(swiperSlide)
+    swiperSlide.append(main_poster_box)
     main_poster_box.append(poster_img, main_poster_box_h3, main_poster_box_p)
     poster_img.append(on_hovered, rating)
     on_hovered.append(movie_card_btn)
