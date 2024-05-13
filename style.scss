@@ -536,6 +536,47 @@ body {
     row-gap: 70px;
 }
 
+.pop_head_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 0 40px;
+
+    h1 {
+        color: #FFF;
+        font-size: 45px;
+        font-weight: 900;
+    }
+
+    .film_date__box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 40%;
+        overflow-x: auto;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    
+
+        p{
+            color:#6D717D ;
+            text-wrap: nowrap;
+            cursor: pointer;
+            &:hover{
+                color: white;
+                transition: .4s ease;
+            }
+            transition: .4s ease;
+        }
+        .act_color{
+            color: white;
+        }
+
+    }
+}
 
 .swiper {
     width: 100%;
@@ -545,6 +586,8 @@ body {
 .swiper-wrapper {
     width: 100%;
     align-items: center;
+    display: flex;
+    gap: 30px;
 
 }
 
@@ -552,8 +595,19 @@ body {
     text-align: center;
     font-size: 18px;
     background: #fff;
-    width: 285px !important;
+    max-width:285px !important;
     border-radius: 12px;
+}
+.next-prev__btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1pc;
+    margin-top: 50px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+
 }
 
 /////////////////popular__cont end zone ///////////////////

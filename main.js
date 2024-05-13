@@ -2,6 +2,7 @@ import axios, { all } from "axios"
 const PICTURE_URL = import.meta.env.VITE_PICTURE_URL
 
 let fil_titl = document.querySelectorAll('.hrefs')
+let release_date = document.querySelectorAll('.release_date')
 let burger_menu = document.querySelector('.title img')
 let menu = document.querySelector('.menu')
 let close_img = document.querySelector('.close')
@@ -20,11 +21,20 @@ let trailerIframe = document.querySelector('.trailer iframe')
 let horrorBtn = document.querySelector('.horror')
 
 
+
 fil_titl.forEach(btn => {
   btn.onclick = () => {
 
     fil_titl.forEach(btn => btn.classList.remove('active'))
     btn.classList.add('active')
+  }
+});
+
+release_date.forEach(btn => {
+  btn.onclick = () => {
+
+    release_date.forEach(btn => btn.classList.remove('act_color'))
+    btn.classList.add('act_color')
   }
 });
 
@@ -250,7 +260,6 @@ function popular_films(arr) {
     movie_card_btn.innerHTML = "Карточка фильма"
     main_poster_box_h3.innerHTML = item.title/* .slice(0, 35) */
 
-
     poster_img.style.backgroundImage = `url(${PICTURE_URL + item.poster_path})`
 
 
@@ -259,10 +268,10 @@ function popular_films(arr) {
     poster_img.classList.add("poster_img")
     on_hovered.classList.add("on_hovered")
     movie_card_btn.classList.add("movie_card_btn")
-    rating.classList.add("rating")
+    rating.classList.add("rating")/* 
     main_poster_box_h3.classList.add("h3")
     main_poster_box_p.classList.add("p")
-
+ */
     popular_contener.append(swiperSlide)
     swiperSlide.append(main_poster_box)
     main_poster_box.append(poster_img, main_poster_box_h3, main_poster_box_p)
@@ -294,6 +303,35 @@ function popular_films(arr) {
         on_hovered.style.opacity = 0
       }, 7);
     }
+
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, Auto_res)
+    .then((res) => res.json())
+    .then((res) => {
+      //console.log(res);
+      let info_ganr_tx = ``
+      for (const el of item.genre_ids) {
+        const genres = res.genres.filter(obj => obj.id === el);
+        info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+
+
+        if (item.genre_ids === el) {
+          all_arr.push(item)
+        }
+        /*   for (item.genre_ids of info_ganr_tx) {
+             console.log(item);
+            if (item === "Horror") {
+              horor_arr.push(item)
+            } else if (item.genre_ids === "Comedy") {
+              comedy_arr.push(item)
+            }
+        
+          } */
+
+      }
+      main_poster_box_p.innerHTML = info_ganr_tx.slice(0, -2)
+
+
+    })
 
 
 
